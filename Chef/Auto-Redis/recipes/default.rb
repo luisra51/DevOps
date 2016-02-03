@@ -26,7 +26,7 @@ package 'Instalando lo Necesario' do
         end
 end
 
-bash 'Compilando Redis' do
+bash 'Compilando Redis 2.8.0' do
 	extract_path = '/opt/redis/'
 	src_filename = '/opt/redis-2.8.0.tar.gz'
 
