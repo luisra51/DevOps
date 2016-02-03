@@ -1,0 +1,54 @@
+I, [2016-02-02T23:04:42.758835 #5527]  INFO -- default-centos-71: -----> Verifying <default-centos-71>...
+I, [2016-02-02T23:04:42.760298 #5527]  INFO -- default-centos-71: Preparing files for transfer
+I, [2016-02-02T23:04:43.244182 #5527]  INFO -- default-centos-71: -----> Busser installation detected (busser)
+I, [2016-02-02T23:04:43.244304 #5527]  INFO -- default-centos-71: Installing Busser plugins: busser-bats
+I, [2016-02-02T23:04:46.087122 #5527]  INFO -- default-centos-71: Plugin bats already installed
+I, [2016-02-02T23:04:46.304193 #5527]  INFO -- default-centos-71: Removing /tmp/verifier/suites/bats
+I, [2016-02-02T23:04:46.307304 #5527]  INFO -- default-centos-71: Transferring files to <default-centos-71>
+I, [2016-02-02T23:04:46.659817 #5527]  INFO -- default-centos-71: -----> Running bats test suite
+I, [2016-02-02T23:04:46.714296 #5527]  INFO -- default-centos-71: [1G   redis-cli revisando si el binario se encuentra en el directorio[K[77G1/1[2G[1G[31;1m ✗ redis-cli revisando si el binario se encuentra en el directorio[K
+I, [2016-02-02T23:04:46.714381 #5527]  INFO -- default-centos-71: [0m[31;22m   (in test file /tmp/verifier/suites/bats/redis-cli.bats, line 3)
+I, [2016-02-02T23:04:46.714410 #5527]  INFO -- default-centos-71: [0m[31;22m     `[ "$status" -eq 0 ]' failed
+I, [2016-02-02T23:04:46.714435 #5527]  INFO -- default-centos-71: [0m
+I, [2016-02-02T23:04:46.714459 #5527]  INFO -- default-centos-71: 1 test, 1 failure
+I, [2016-02-02T23:04:46.723363 #5527]  INFO -- default-centos-71: !!!!!! Command [/tmp/verifier/vendor/bats/bin/bats /tmp/verifier/suites/bats] exit code was 1
+E, [2016-02-02T23:04:46.727402 #5527] ERROR -- default-centos-71: Verify failed on instance <default-centos-71>.
+E, [2016-02-02T23:04:46.727553 #5527] ERROR -- default-centos-71: ------Exception-------
+E, [2016-02-02T23:04:46.727593 #5527] ERROR -- default-centos-71: Class: Kitchen::ActionFailed
+E, [2016-02-02T23:04:46.727624 #5527] ERROR -- default-centos-71: Message: SSH exited (1) for command: [sh -c '
+
+BUSSER_ROOT="/tmp/verifier"; export BUSSER_ROOT
+GEM_HOME="/tmp/verifier/gems"; export GEM_HOME
+GEM_PATH="/tmp/verifier/gems"; export GEM_PATH
+GEM_CACHE="/tmp/verifier/gems/cache"; export GEM_CACHE
+
+sudo -E /tmp/verifier/bin/busser test
+']
+E, [2016-02-02T23:04:46.727657 #5527] ERROR -- default-centos-71: ---Nested Exception---
+E, [2016-02-02T23:04:46.727686 #5527] ERROR -- default-centos-71: Class: Kitchen::Transport::SshFailed
+E, [2016-02-02T23:04:46.727718 #5527] ERROR -- default-centos-71: Message: SSH exited (1) for command: [sh -c '
+
+BUSSER_ROOT="/tmp/verifier"; export BUSSER_ROOT
+GEM_HOME="/tmp/verifier/gems"; export GEM_HOME
+GEM_PATH="/tmp/verifier/gems"; export GEM_PATH
+GEM_CACHE="/tmp/verifier/gems/cache"; export GEM_CACHE
+
+sudo -E /tmp/verifier/bin/busser test
+']
+E, [2016-02-02T23:04:46.727747 #5527] ERROR -- default-centos-71: ------Backtrace-------
+E, [2016-02-02T23:04:46.727775 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/verifier/base.rb:83:in `rescue in call'
+E, [2016-02-02T23:04:46.727805 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/verifier/base.rb:86:in `call'
+E, [2016-02-02T23:04:46.727834 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:405:in `block in verify_action'
+E, [2016-02-02T23:04:46.727864 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:495:in `call'
+E, [2016-02-02T23:04:46.727893 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:495:in `synchronize_or_call'
+E, [2016-02-02T23:04:46.727922 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:460:in `block in action'
+E, [2016-02-02T23:04:46.727954 #5527] ERROR -- default-centos-71: /usr/lib/ruby/2.0.0/benchmark.rb:281:in `measure'
+E, [2016-02-02T23:04:46.727983 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:459:in `action'
+E, [2016-02-02T23:04:46.728023 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:401:in `verify_action'
+E, [2016-02-02T23:04:46.728056 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:348:in `block in transition_to'
+E, [2016-02-02T23:04:46.728085 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:347:in `each'
+E, [2016-02-02T23:04:46.728113 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:347:in `transition_to'
+E, [2016-02-02T23:04:46.728141 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/instance.rb:160:in `verify'
+E, [2016-02-02T23:04:46.728169 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/command.rb:176:in `public_send'
+E, [2016-02-02T23:04:46.728197 #5527] ERROR -- default-centos-71: /var/lib/gems/2.0.0/gems/test-kitchen-1.5.0/lib/kitchen/command.rb:176:in `block (2 levels) in run_action'
+E, [2016-02-02T23:04:46.728230 #5527] ERROR -- default-centos-71: ----------------------
